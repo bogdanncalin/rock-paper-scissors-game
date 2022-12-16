@@ -98,8 +98,8 @@ buttons.forEach((button) =>{
 
 const resetButton = document.getElementById('reset-score-button')
 resetButton.addEventListener('click', function reset(e) {
-    document.getElementById('player-choice').src = "../images/empty.png";
-    document.getElementById('computer-choice').src = "../images/empty.png";
+    document.getElementById('player-choice').src = "./images/empty.png";
+    document.getElementById('computer-choice').src = "./images/empty.png";
     playerScore = 0;
     computerScore = 0;
     playerScoreDisplay.textContent = 0;
