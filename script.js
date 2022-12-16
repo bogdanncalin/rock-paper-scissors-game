@@ -51,28 +51,28 @@ buttons.forEach((button) =>{
 
         if(button.id === 'rock'){
             playerSelection = 'rock';
-            document.getElementById('player-choice').src = "../images/rock.png";
+            document.getElementById('player-choice').src = "./images/rock.png";
         }
         else if (button.id === 'paper') {
             playerSelection = 'paper';
-            document.getElementById('player-choice').src = "../images/paper.png";
+            document.getElementById('player-choice').src = "./images/paper.png";
         }
         else if(button.id === 'scissors') {
             playerSelection = 'scissors';
-            document.getElementById('player-choice').src = "../images/scissors.png";
+            document.getElementById('player-choice').src = "./images/scissors.png";
         }
 
 
         let computerChoice = getComputerChoice();
 
         if(computerChoice === 'rock'){
-            document.getElementById('computer-choice').src = "../images/rock.png";
+            document.getElementById('computer-choice').src = "./images/rock.png";
         }
         else if (computerChoice === 'paper') {
-            document.getElementById('computer-choice').src = "../images/paper.png";
+            document.getElementById('computer-choice').src = "./images/paper.png";
         }
         else if(computerChoice === 'scissors') {
-            document.getElementById('computer-choice').src = "../images/scissors.png";
+            document.getElementById('computer-choice').src = "./images/scissors.png";
         }
 
       
