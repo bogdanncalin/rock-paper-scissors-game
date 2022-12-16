@@ -28,35 +28,85 @@ function round(playerSelection, computerChoice){
 
 }
 
-function getPlayersChoice(){
-    return prompt("What do you choose?").toLowerCase();
-}
+const buttons = document.querySelectorAll('.button');
 
-function game(){
-    let playerScore = 0;
-    let computerScore = 0;
-    for(let i = 0; i <= 4; i++){
-        playerSelection = getPlayersChoice();
-        computerChoice = getComputerChoice();
-        console.log(`Round number ${i+1}: ${round(playerSelection, computerChoice)}`);
-        console.log(`You vs computer: ${playerSelection} vs ${computerChoice}`);
-        console.log('');
+
+let playerSelection;
+
+let playerScoreDisplay = document.getElementById('player-score');
+let computerScoreDisplay = document.getElementById('computer-score');
+playerScoreDisplay.textContent = 0;
+computerScoreDisplay.textContent = 0;
+
+let playerScore = 0;
+let computerScore = 0;
+let computerChoiceDisplay = document.getElementById('computer-choice');
+
+let decision = document.getElementById('decision');
+// decision.textContent = "Let`s GO";
+
+
+buttons.forEach((button) =>{
+    button.addEventListener('click', () => {
+
+        if(button.id === 'rock'){
+            playerSelection = 'rock';
+            document.getElementById('player-choice').src = "../images/rock.png";
+        }
+        else if (button.id === 'paper') {
+            playerSelection = 'paper';
+            document.getElementById('player-choice').src = "../images/paper.png";
+        }
+        else if(button.id === 'scissors') {
+            playerSelection = 'scissors';
+            document.getElementById('player-choice').src = "../images/scissors.png";
+        }
+
+
+        let computerChoice = getComputerChoice();
+
+        if(computerChoice === 'rock'){
+            document.getElementById('computer-choice').src = "../images/rock.png";
+        }
+        else if (computerChoice === 'paper') {
+            document.getElementById('computer-choice').src = "../images/paper.png";
+        }
+        else if(computerChoice === 'scissors') {
+            document.getElementById('computer-choice').src = "../images/scissors.png";
+        }
+
+      
+        round(playerSelection, computerChoice);
+
         if(round(playerSelection, computerChoice) === "You won the round!"){
-            playerScore ++;
+            // player won
+            playerScore++;
         }
         else if(round(playerSelection, computerChoice) === "You lost the round!"){
-            computerScore ++;
+            // computer won
+            computerScore++;
         }
-    }
-    if (playerScore > computerScore){
-        return `You won the game! The score is ${playerScore} - ${computerScore} (Player - Computer)`;
-    }
-    else if (computerScore > playerScore){
-        return `You lost the game! The score is ${playerScore} - ${computerScore} (Player - Computer)`;
-    }
-    else{
-        return `It is a tie! The score is ${playerScore} - ${computerScore} (Player - Computer)`;
-    }
-}
+        else if(round(playerSelection, computerChoice) === "Tie"){
+            // its a tie
+        }
+        playerScoreDisplay.textContent = playerScore;
+        computerScoreDisplay.textContent = computerScore;
+        console.log(`PlayerScore: ${playerScore}, ComputerScore: ${computerScore}`);
+    });
+});
 
-console.log(game());
+
+const resetButton = document.getElementById('reset-score-button')
+resetButton.addEventListener('click', function reset(e) {
+    document.getElementById('player-choice').src = "../images/empty.png";
+    document.getElementById('computer-choice').src = "../images/empty.png";
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDisplay.textContent = 0;
+    computerScoreDisplay.textContent = 0;
+    console.log(`After reset: PlayerScore: ${playerScore}, ComputerScore: ${computerScore}`)
+    // e.stopPropagation();
+});
+
+
+

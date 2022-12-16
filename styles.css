@@ -1,0 +1,76 @@
+@import url('https://fonts.cdnfonts.com/css/8bit-wonder');
+
+body{
+    background-color: #282C2F;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    gap: 10em;
+    margin: 0.5em;
+}
+
+.display{
+    display:flex;
+    justify-content: center;
+    height: 200px;
+}
+.player-display, .computer-display{
+    min-width: 300px;
+}
+
+.button, #player-choice, #computer-choice{
+    border: 2px solid #323639;
+    border-radius: 10%;
+    padding: 0.7em;
+    box-shadow: 2px 2px #000000;
+}
+
+#rock, #paper, #scissors, #player-choice, #computer-choice{
+    width: 7em;;
+    height: 7em;
+}
+
+.button:hover{
+    border: 2px solid #3a3e41;
+}
+
+.button:active{
+    box-shadow: 0px 0px;
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.title{
+    font-family: '8BIT WONDER', sans-serif;
+    padding: 1em;
+    font-size: 2em;
+    color:#D6D6D7;
+}
+
+.score, #reset-score-button, #text, .choose, #decision{
+    font-family: '8BIT WONDER', sans-serif;
+    margin: 0.5em;
+    font-size: 1.5em;
+    color:#D6D6D7;
+}
+
+.score-marks{
+    display: flex;
+}
+
+
+
+#line{
+    border: 1px solid black;
+}
