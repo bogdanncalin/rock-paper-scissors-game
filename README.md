@@ -1,4 +1,10 @@
 # rock-paper-scissors-game
-A rock-paper-scissors game I did as an assignment for The Odin Project javascript course I have taken.
+🛠 Tech stack: JavaScript, HTML, and CSS. 🎮
 
-Preview: https://bogdanncalin.github.io/rock-paper-scissors-game/
+✏️ Enabled users to play by selecting their moves on the screen with the mouse.
+
+⚙️ Implemented a computer opponent that plays randomly back for an exciting challenge.
+
+💡 This project provided valuable experience in web development and game design. 🚀
+
+[🔗 Click here for the demo](https://bogdanncalin.github.io/rock-paper-scissors-game/)
